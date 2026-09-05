@@ -1,9 +1,9 @@
 {
-	"name": "openrouter-balance",
-	"displayName": "OpenRouter Balance",
+	"name": "ffj-openrouter-balance",
+	"displayName": "OpenRouter Account Balance - flaviofranco.dev",
 	"description": "Displays your OpenRouter account balance in the status bar and shows account activity (spend, requests, tokens, and balance).",
 	"version": "1.0.0",
-	"publisher": "flaviofranco-dev",
+	"publisher": "FlavioFranco-dev",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.85.0"
