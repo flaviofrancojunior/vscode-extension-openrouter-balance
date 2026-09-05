@@ -1,0 +1,97 @@
+{
+	"name": "openrouter-balance",
+	"displayName": "OpenRouter Balance",
+	"description": "Displays your OpenRouter account balance in the status bar and shows account activity (spend, requests, tokens, and balance).",
+	"version": "1.0.0",
+	"publisher": "flaviofranco-dev",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"openrouter",
+		"balance",
+		"credits",
+		"usage",
+		"api"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/flaviofrancojunior/vscode-extension-openrouter-balance.git"
+	},
+	"main": "./out/extension.js",
+	"icon": "media/openrouter-logo.png",
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"contributes": {
+		"icons": {
+			"openrouter-logo": {
+				"description": "Official OpenRouter icon",
+				"default": {
+					"fontPath": "media/openrouter.woff2",
+					"fontCharacter": "\\f101"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "openrouter.setKey",
+				"title": "OpenRouter: Set management key"
+			},
+			{
+				"command": "openrouter.clearKey",
+				"title": "OpenRouter: Clear management key"
+			},
+			{
+				"command": "openrouter.showExtrato",
+				"title": "OpenRouter: Show activity"
+			},
+			{
+				"command": "openrouter.refresh",
+				"title": "OpenRouter: Refresh balance now"
+			}
+		],
+		"configuration": {
+			"title": "OpenRouter Balance",
+			"properties": {
+				"openrouter.refreshIntervalMinutes": {
+					"type": "number",
+					"default": 15,
+					"minimum": 1,
+					"maximum": 360,
+					"description": "Interval, in minutes, between balance checks against the OpenRouter API."
+				},
+				"openrouter.lowBalanceThreshold": {
+					"type": "number",
+					"default": 5,
+					"minimum": 0,
+					"description": "Threshold (USD) at which the balance is shown in amber."
+				},
+				"openrouter.criticalBalanceThreshold": {
+					"type": "number",
+					"default": 1,
+					"minimum": 0,
+					"description": "Threshold (USD) at which the balance is shown in red."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"test": "node ./out/test/runTest.js",
+		"pretest": "npm run compile"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^20.14.0",
+		"@types/vscode": "^1.85.0",
+		"mocha": "^12.0.0",
+		"typescript": "^5.5.0"
+	}
+}
