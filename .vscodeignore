@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+src/**
+out/test/**
+out/**/*.map
+node_modules/**
+.gitignore
+tsconfig.json
+**/*.vsix
+.copilot-specs-cache/**
